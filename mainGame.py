@@ -162,7 +162,7 @@ while(p.lower() != "boudin"):
     p=getpass("Enter shield activation token: ")
 
 
-mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape coordinates", "Call a friend")
+mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape coordinates")
 print(mainQuest)
 
 if mainQuest==1:
@@ -175,11 +175,17 @@ if mainQuest==1:
     
     call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
-    mainQuest = menu("Compute escape coordinates", "Call a friend")
+    mainQuest = menu("Compute escape coordinates")
 
+    if mainQuest==1:
+        print("Computing escape trajectory")
 
+        for i in tqdm(range(0,100)):
+            sleep(0.1)
+
+        call("open escape_map.pdf", shell=True)
+        
 elif mainQuest==2:
-    print(mainQuest)
     print("Computing escape trajectory")
 
     for i in tqdm(range(0,100)):
@@ -187,11 +193,19 @@ elif mainQuest==2:
 
     call("open escape_map.pdf", shell=True)
 
-    menu("Sit back, relax and watch interdimensional cable", "Call a friend")
+    mainQuest = menu("Sit back, relax and watch interdimensional cable")
 
-    mainQuest = menu("Compute escape coordinates", "Call a friend")
+    if mainQuest == 1:
 
+        print("Connecting to interdimensional cable")    
+
+        for i in tqdm(range(0,100)):
+            sleep(0.1)
+
+        print("C 137 - XZF 8901: link established")
     
+        call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
+
         
 p=getpass("Enter pods escape coordinates: DIMENSION-RADIUS-ANGLE DDDD-RR-AAA: ")
 
@@ -206,6 +220,8 @@ while(p.lower() != "c137-25-135"):
 
 
 print("Uploading trajectory")
+for i in tqdm(range(0,100)):
+    sleep(0.1)
 
 getpass(end)
 
