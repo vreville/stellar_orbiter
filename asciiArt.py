@@ -1,22 +1,26 @@
 title = """
- ____  _       _ _               
-/ ___|| |_ ___| | | __ _ _ __    
-\___ \| __/ _ \ | |/ _` | '__|   
- ___) | ||  __/ | | (_| | |      
-|____/ \__\___|_|_|\__,_|_|      
- / _ \ _ __| |__ (_) |_ ___ _ __ 
-| | | | '__| '_ \| | __/ _ \ '__|
-| |_| | |  | |_) | | ||  __/ |   
- \___/|_|  |_.__/|_|\__\___|_|   
- ____  _________  _____          
-|___ \|___ /___ \|___ /          
-  __) | |_ \ __) | |_ \          
- / __/ ___) / __/ ___) |         
-|_____|____/_____|____/          
+ ____  _       _ _               ___       _     _ _              ____  _________  _____ 
+/ ___|| |_ ___| | | __ _ _ __   / _ \ _ __| |__ (_) |_ ___ _ __  |___ \|___ /___ \|___ / 
+\___ \| __/ _ \ | |/ _` | '__| | | | | '__| '_ \| | __/ _ \ '__|   __) | |_ \ __) | |_ \ 
+ ___) | ||  __/ | | (_| | |    | |_| | |  | |_) | | ||  __/ |     / __/ ___) / __/ ___) |
+|____/ \__\___|_|_|\__,_|_|     \___/|_|  |_.__/|_|\__\___|_|    |_____|____/_____|____/ 
 
 > Press '\u001b[33mEnter\u001b[0m' to Play
 """
 
+riddle_passed="""
+  ____                 _  __        __         _    
+ / ___| ___   ___   __| | \ \      / /__  _ __| | __
+| |  _ / _ \ / _ \ / _` |  \ \ /\ / / _ \| '__| |/ /
+| |_| | (_) | (_) | (_| |   \ V  V / (_) | |  |   < 
+ \____|\___/ \___/ \__,_| _  \_/\_/ \___/|_|  |_|\_\
+|_   _|__  __ _ _ __ ___ | |                        
+  | |/ _ \/ _` | '_ ` _ \| |                        
+  | |  __/ (_| | | | | | |_|                        
+  |_|\___|\__,_|_| |_| |_(_)                        
+
+> Press '\u001b[33mEnter\u001b[0m' to continue
+"""
 
 end = """
 __   __                                 _               _ _ 
@@ -103,7 +107,7 @@ Greetings team. This is Martin/Martha speaking, as always your cheery humanoid r
 """
 
 intro_text2="""
-As you know, we’ve been in this fabulously tedious orbit around the frustrating active Barnard’s Star now for 7 whole rotations. There it is *points to picture*, not worth the trip I say! I told them it was a danger getting close to such an active star but no, they never listen to Martin/Martha, (s)he’s only got 1,000 times the intellectual capacity than you pathetic humans…
+As you know, we’ve been in this fabulously tedious orbit around the frustrating active Barnard’s Star now for 7 whole rotations. Not worth the trip I say! I told them it was a danger getting close to such an active star but no, they never listen to Martin/Martha, (s)he’s only got 1,000 times the intellectual capacity than you pathetic humans…
 """
 
 intro_text3="""
@@ -111,7 +115,7 @@ Anyway, of course there’s been a gigantic stellar flare and it’s heading dir
 """
 
 intro_text4="""
-If I were you, I’d make a hasty retreat out of that door and into the CME proof pod. The only problem is the security system you guys installed has decided to automatically lock all of the doors when there’s an emergency. I could unlock them, but it’s been a hideously long day for me watching that giant active region swinging around in our direction, and calculating the probability of a stellar flare (52% by the way, not that anyone cares, I did tell the captain about 10 times), so now I’m due a recharge.
+If I were you, I’d make a hasty retreat out of that door and into the escape pods. The only problem is the security system you guys installed has decided to automatically lock all of the doors when there’s an emergency. I could unlock them, but it’s been a hideously long day for me watching that giant active region swinging around in our direction, and calculating the probability of a stellar flare (52% by the way, not that anyone cares, I did tell the captain about 10 times), so now I’m due a recharge.
 
 By my calculation, you now have less than an hour until the CME hits to escape, good luck.
 """

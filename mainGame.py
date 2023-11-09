@@ -3,6 +3,7 @@ from asciiArt import *
 
 # Importing modules
 import os
+import numpy as np
 from getpass import getpass
 from subprocess import call
 from time import sleep
@@ -16,8 +17,12 @@ class Format:
 # \\\\\\\\ ** FUNCTIONS!!! ** \\\\\\\
 
 # Menu options:
-def menu(choice1 = "", choice2 = "", choice3 = "", choice4 = "", choice5 = ""):
-    myList = [choice1, choice2, choice3, choice4, choice5]
+#def menu(choice1 = "", choice2 = "", choice3 = "", choice4 = "", choice5 = ""):
+#    myList = [choice1, choice2, choice3, choice4, choice5]
+
+def menu(*options):
+
+    myList = [opt for opt in options]
     letterStart = 64
     index = -1
     correctAnswer = False
@@ -148,21 +153,84 @@ getpass(intro_text5)
 
 #animation(animationLetter1, animationLetter2, 0.3, 5)
 
+# Riddle #1
 p=getpass("Enter admin password: ")
 
-while (p.lower() != "caca"):
+while (p.lower() != "badwolf"):
     print("Wrong password")
-    cls()
     p=getpass("Enter admin password: ")
 
-p=getpass("Enter shield activation token: ")
+call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3", shell=True)
 
-while(p.lower() != "boudin"):
+p=getpass("Enter shield activation/radiation medecine token: ")
+
+while(p.lower() != "ok"):
     print("wrong token")
     p=getpass("Enter shield activation token: ")
 
 
-mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape coordinates")
+getpass(riddle_passed)
+cls()
+
+# Riddle #2
+
+print("Preparing escape pods")
+for i in tqdm(range(0,100)):
+    sleep(0.1)
+    
+print("Load breathable atmosphere into the pods")
+
+O2_level = 0
+N2_level = 0
+Ar_level = 0
+CO2_level = 0
+i = 0
+
+while (np.abs(O2_level-21) > 2 or np.abs(N2_level-78) > 2 or np.abs(Ar_level-1) > 0.5 or np.abs(CO2_level-0.05) > 0.1):
+    if (i > 0):
+        print("Hum, not quite breathable yet...")
+        
+    mainQuest = menu("[N2]  {:.2f}%".format(N2_level), "[Ar]  {:.2f}%".format(Ar_level), "[Ne]  0.00%", "[CH4] 0.00%", "[He]  0.00%", "[Kr]  0.00%", "[CO2] {:.2f}%".format(CO2_level), "[H2]  0.00%", "[O2]  {:.2f}%".format(O2_level), "[NO2] 0.00%")
+
+    if mainQuest == 1:
+        try:
+            N2_level=float(getpass("load [N2] % "))
+        except:
+            N2_level = 0
+
+    elif mainQuest == 2:
+        try:
+            Ar_level=float(getpass("load [Ar] % "))
+        except:
+            Ar_level = 0
+            
+    elif mainQuest == 7:
+        try:
+            CO2_level=float(getpass("load [CO2] % "))
+            print(CO2_level)
+        except:
+            CO2_level = 0
+    elif mainQuest == 9:
+        try:
+            O2_level=float(getpass("load [O2] % "))
+        except:
+            O2_level=0
+    
+
+    else:
+        print("You don't want to breath that!")
+
+    i+=1
+
+
+getpass(riddle_passed)
+cls()
+
+# Riddle #3
+
+print("What would you like to do now?")
+
+mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape pods coordinates")
 print(mainQuest)
 
 if mainQuest==1:
@@ -222,6 +290,10 @@ while(p.lower() != "c137-25-135"):
 print("Uploading trajectory")
 for i in tqdm(range(0,100)):
     sleep(0.1)
+
+
+getpass(riddle_passed)
+cls()
 
 getpass(end)
 
