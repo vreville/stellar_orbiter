@@ -128,6 +128,12 @@ while (p.lower() != "badwolf"):
 
 call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3 &", shell=True)
 
+print("")
+print("")
+print("###########################################")
+print("Activate shield or find radiation medecine ")
+print("###########################################")
+
 p=getpass("Enter shield activation/radiation medecine token: ")
 
 while(p.lower() != "zb93" and p.lower() != "fg79"):
@@ -145,8 +151,11 @@ print("Preparing escape pods")
 for i in tqdm(range(0,100)):
     sleep(0.1)
 
-
+print("")
+print("")
+print("#######################################################################")
 print("To unlock escape pods, you need to load breathable atmosphere into them")
+print("#######################################################################")
 
 O2_level = 0
 N2_level = 0
@@ -154,7 +163,7 @@ Ar_level = 0
 CO2_level = 0
 i = 0
 
-while not ((np.abs(O2_level-21) < 2) and (np.abs(N2_level-78) < 2) and (np.abs(Ar_level-1) < 0.5) and (np.abs(CO2_level-0.05) < 0.01)):
+while not ((np.abs(O2_level-21) < 2) and (np.abs(N2_level-78) < 2) and (np.abs(Ar_level-1) < 0.5) and (np.abs(CO2_level-0.05) < 0.02)):
     if (i > 0):
         print("Hum, not quite breathable yet...")
         
@@ -243,12 +252,12 @@ elif mainQuest==2:
         
 p=getpass("Enter pods escape coordinates: DIMENSION-RADIUS-ANGLE DDDD-RR-AAA: ")
 
-while(p.lower() != "c137-25-135"):
+while(p.lower() != "c137-30-135"):
     print("loading coordinates {}".format(p.lower()))
     for i in tqdm(range(0,10)):
             sleep(0.1)
     
-    if (p.lower() == "c137-25-045"):
+    if (p.lower() == "c137-30-045"):
         print("Not enough fuel for this escape coords")
         p=getpass("Enter pods escape coordinates: DIMENSIONS-RADIUS-ANGLE DDDD-RR-AAA: ")
     else:
@@ -262,7 +271,13 @@ for i in tqdm(range(0,100)):
 
 
 getpass(riddle_passed)
-cls()
 
-getpass(end)
+print("")
+print("")
+print("############################################################")
+print("Find your way out in the pods with the sonic screwdriver !!!")
+print("############################################################")
+
+#cls()
+#getpass(end)
 
