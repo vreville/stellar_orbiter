@@ -91,41 +91,6 @@ def textAnimation(sentence, timeBetweenLetters=0.02):
         sleep(timeBetweenLetters)
     print("")
  
-# Game Over screen:
-def gameOver(time, sentence=""):
-    cls()
-    print("""
-
-  /$$$$$$                                   
- /$$__  $$                                  
-| $$  \__/  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ 
-| $$ /$$$$ |____  $$| $$_  $$_  $$ /$$__  $$
-| $$|_  $$  /$$$$$$$| $$ \ $$ \ $$| $$$$$$$$
-| $$  \ $$ /$$__  $$| $$ | $$ | $$| $$_____/
-|  $$$$$$/|  $$$$$$$| $$ | $$ | $$|  $$$$$$$
- \______/  \_______/|__/ |__/ |__/ \_______/
-    """)
-    
-    sleep(time)
-    
-    print("""
-  /$$$$$$                               
- /$$__  $$                              
-| $$  \ $$ /$$    /$$ /$$$$$$   /$$$$$$ 
-| $$  | $$|  $$  /$$//$$__  $$ /$$__  $$
-| $$  | $$ \  $$/$$/| $$$$$$$$| $$  \__/
-| $$  | $$  \  $$$/ | $$_____/| $$      
-|  $$$$$$/   \  $/  |  $$$$$$$| $$      
- \______/     \_/    \_______/|__/      
-                                        
-    """)
-    
-    sleep(0.25)
-    
-    textAnimation(sentence)
-    quit()
-
-            
 # Make background go black (only for web Python interpreters):  
 def blackground(sentence = ""):
     print('\x1b[40m''\x1b[97m')
@@ -153,6 +118,7 @@ getpass(intro_text5)
 
 #animation(animationLetter1, animationLetter2, 0.3, 5)
 
+
 # Riddle #1
 p=getpass("Enter admin password: ")
 
@@ -160,25 +126,27 @@ while (p.lower() != "badwolf"):
     print("Wrong password")
     p=getpass("Enter admin password: ")
 
-call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3", shell=True)
+call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3 &", shell=True)
 
 p=getpass("Enter shield activation/radiation medecine token: ")
 
-while(p.lower() != "ok"):
+while(p.lower() != "zb93" and p.lower() != "fg79"):
     print("wrong token")
-    p=getpass("Enter shield activation token: ")
+    p=getpass("Enter shield activation/radiation medecine token: ")
 
 
 getpass(riddle_passed)
 cls()
+
 
 # Riddle #2
 
 print("Preparing escape pods")
 for i in tqdm(range(0,100)):
     sleep(0.1)
-    
-print("Load breathable atmosphere into the pods")
+
+
+print("To unlock escape pods, you need to load breathable atmosphere into them")
 
 O2_level = 0
 N2_level = 0
@@ -186,39 +154,38 @@ Ar_level = 0
 CO2_level = 0
 i = 0
 
-while (np.abs(O2_level-21) > 2 or np.abs(N2_level-78) > 2 or np.abs(Ar_level-1) > 0.5 or np.abs(CO2_level-0.05) > 0.1):
+while not ((np.abs(O2_level-21) < 2) and (np.abs(N2_level-78) < 2) and (np.abs(Ar_level-1) < 0.5) and (np.abs(CO2_level-0.05) < 0.01)):
     if (i > 0):
         print("Hum, not quite breathable yet...")
         
-    mainQuest = menu("[N2]  {:.2f}%".format(N2_level), "[Ar]  {:.2f}%".format(Ar_level), "[Ne]  0.00%", "[CH4] 0.00%", "[He]  0.00%", "[Kr]  0.00%", "[CO2] {:.2f}%".format(CO2_level), "[H2]  0.00%", "[O2]  {:.2f}%".format(O2_level), "[NO2] 0.00%")
+    mainQuest = menu("Pipe 28, level {:.2f}%".format(N2_level), "Pipe 40, level {:.2f}%".format(Ar_level), "Pipe 20, level 0.00%", "Pipe 26, level 0.00%", "Pipe 04, level 0.00%", "Pipe 84, level 0.00%", "Pipe 44, level {:.2f}%".format(CO2_level), "Pipe 02, level 0.00%", "Pipe 32, level {:.2f}%".format(O2_level))
 
     if mainQuest == 1:
         try:
-            N2_level=float(getpass("load [N2] % "))
+            N2_level=float(getpass("Fill pods with gas 28 at (%) "))
         except:
             N2_level = 0
 
     elif mainQuest == 2:
         try:
-            Ar_level=float(getpass("load [Ar] % "))
+            Ar_level=float(getpass("Fill pods with gas 40 at (%) "))
         except:
             Ar_level = 0
             
     elif mainQuest == 7:
         try:
-            CO2_level=float(getpass("load [CO2] % "))
+            CO2_level=float(getpass("Fill pods with gas 44 at (%) "))
             print(CO2_level)
         except:
             CO2_level = 0
     elif mainQuest == 9:
         try:
-            O2_level=float(getpass("load [O2] % "))
+            O2_level=float(getpass("Fill pods with gas 32 at (%) "))
         except:
             O2_level=0
-    
-
+            
     else:
-        print("You don't want to breath that!")
+        print("No need to breath that, actually!")
 
     i+=1
 
@@ -231,7 +198,6 @@ cls()
 print("What would you like to do now?")
 
 mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape pods coordinates")
-print(mainQuest)
 
 if mainQuest==1:
     print("Connecting to interdimensional cable")    
@@ -239,7 +205,7 @@ if mainQuest==1:
     for i in tqdm(range(0,100)):
         sleep(0.1)
 
-    print("C 137 - XZF 8901: link established")
+    print("C137 - XZF8901: link established")
     
     call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
@@ -270,7 +236,7 @@ elif mainQuest==2:
         for i in tqdm(range(0,100)):
             sleep(0.1)
 
-        print("C 137 - XZF 8901: link established")
+        print("C137 - XZF8901: link established")
     
         call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
@@ -278,7 +244,10 @@ elif mainQuest==2:
 p=getpass("Enter pods escape coordinates: DIMENSION-RADIUS-ANGLE DDDD-RR-AAA: ")
 
 while(p.lower() != "c137-25-135"):
-    print(p.lower())
+    print("loading coordinates {}".format(p.lower()))
+    for i in tqdm(range(0,10)):
+            sleep(0.1)
+    
     if (p.lower() == "c137-25-045"):
         print("Not enough fuel for this escape coords")
         p=getpass("Enter pods escape coordinates: DIMENSIONS-RADIUS-ANGLE DDDD-RR-AAA: ")
