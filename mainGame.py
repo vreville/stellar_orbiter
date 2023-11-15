@@ -109,15 +109,11 @@ def whiteBackground(sentence = ""):
 
 getpass(title) 
 
-#getpass(kerrigan)
 getpass(intro_text1)
 getpass(intro_text2)
 getpass(intro_text3)
 getpass(intro_text4)
 getpass(intro_text5)
-
-#animation(animationLetter1, animationLetter2, 0.3, 5)
-
 
 # Riddle #1
 p=getpass("Enter admin password: ")
@@ -128,12 +124,7 @@ while (p.lower() != "badwolf"):
 
 call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3 &", shell=True)
 
-print("")
-print("")
-print("###########################################")
-print("Activate shield or find radiation medecine ")
-print("###########################################")
-
+getpass(riddle1)
 p=getpass("Enter shield activation/radiation medecine token: ")
 
 while(p.lower() != "zb93" and p.lower() != "fg79"):
@@ -147,15 +138,9 @@ cls()
 
 # Riddle #2
 
-print("Preparing escape pods")
+print(riddle2)
 for i in tqdm(range(0,100)):
     sleep(0.1)
-
-print("")
-print("")
-print("#######################################################################")
-print("To unlock escape pods, you need to load breathable atmosphere into them")
-print("#######################################################################")
 
 O2_level = 0
 N2_level = 0
@@ -204,8 +189,7 @@ cls()
 
 # Riddle #3
 
-print("What would you like to do now?")
-
+print(riddle3)
 mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape pods coordinates")
 
 if mainQuest==1:
@@ -271,12 +255,7 @@ for i in tqdm(range(0,100)):
 
 
 getpass(riddle_passed)
-
-print("")
-print("")
-print("############################################################")
-print("Find your way out in the pods with the sonic screwdriver !!!")
-print("############################################################")
+print(riddle4)
 
 #cls()
 #getpass(end)
