@@ -139,9 +139,9 @@ cls()
 # Riddle #2
 
 print(riddle2)
-for i in tqdm(range(0,100)):
-    sleep(0.1)
 
+print("Load a breathable atmosphere into the escape pods. Beware of oxygen toxicity!")
+    
 O2_level = 0
 N2_level = 0
 Ar_level = 0
@@ -169,7 +169,6 @@ while not ((np.abs(O2_level-21) < 2) and (np.abs(N2_level-78) < 2) and (np.abs(A
     elif mainQuest == 7:
         try:
             CO2_level=float(getpass("Fill pods with gas 44 at (%) "))
-            print(CO2_level)
         except:
             CO2_level = 0
     elif mainQuest == 9:
@@ -234,7 +233,7 @@ elif mainQuest==2:
         call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
         
-p=getpass("Enter pods escape coordinates: DIMENSION-RADIUS-ANGLE DDDD-RR-AAA: ")
+p=getpass("Enter pods escape coordinates [DIMENSION-RADIUS-ANGLE DDDD-RR-AAA]: ")
 
 while(p.lower() != "c137-30-135"):
     print("loading coordinates {}".format(p.lower()))
@@ -255,7 +254,8 @@ for i in tqdm(range(0,100)):
 
 
 getpass(riddle_passed)
-print(riddle4)
+
+getpass(riddle4)
 
 #cls()
 #getpass(end)
