@@ -1,6 +1,6 @@
-# stellar_orbiter
+# Stellar Orbiter
 
-Main program used in the escape room of ESWW 2023
+Main program used in the escape room of European Space Weather Week 2023, held in Toulouse, France.
 
 # Developpers:
 
