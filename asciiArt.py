@@ -90,3 +90,29 @@ Oh…and don’t forget the stellar energetic particles, they’ll be here in 15
 
 Good luck, you’ll need it.
 """
+
+not_an_option="Sorry that's not an option"
+
+riddle1_passwd="Enter admin password: "
+riddle1_wrongpasswd="Wrong password"
+
+riddle1_shieldtoken="Enter shield activation/radiation medecine token: "
+riddle1_wrongtoken="Wrong token"
+
+riddle2_atmo="Load a breathable atmosphere into the escape pods. Beware of oxygen toxicity!"
+riddle2_tmp="Hum, not quite breathable yet..."
+riddle2_pipe="Pipe {:02d}, level {:.2f}%"
+riddle2_fill="Fill pods with gas {:02d} at (%) "
+riddle2_noneed="No need to breath that, actually!"
+
+riddle3_sit_back="Sit back, relax and watch interdimensional cable"
+riddle3_compute="Compute escape pods coordinates"
+riddle3_connect="Connecting to interdimensional cable"
+riddle3_link="C137 - XZF8901: link established"
+riddle3_escape="Computing escape trajectory"
+riddle3_coords="Enter pods escape coordinates [DIMENSION-RADIUS-ANGLE DDDD-RR-AAA]: "
+riddle3_loading="loading coordinates {}"
+riddle3_fuel="Not enough fuel for this escape coords"
+riddle3_invalid="Invalid coordinates"
+riddle3_uploading="Uploading trajectory"
+

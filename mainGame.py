@@ -52,7 +52,7 @@ def menu(*options):
                 continue
             else:
                 print("")
-                print("Sorry, that's not an option!")
+                print(not_an_option)
                 print("")
     print("")
     
@@ -116,31 +116,29 @@ getpass(intro_text4)
 getpass(intro_text5)
 
 # Riddle #1
-p=getpass("Enter admin password: ")
+p=getpass(riddle1_passwd)
 
 while (p.lower() != "badwolf"):
-    print("Wrong password")
-    p=getpass("Enter admin password: ")
+    print(riddle1_wrongpasswd)
+    p=getpass(riddle1_passwd)
 
 call("/Applications/VLC.app/Contents/MacOS/VLC Code1_DGT.mp3 Code2_SBG.mp3 Code3_NL.mp3 &", shell=True)
 
 getpass(riddle1)
-p=getpass("Enter shield activation/radiation medecine token: ")
+p=getpass(riddle1_shieldtoken)
 
 while(p.lower() != "zb93" and p.lower() != "fg79"):
-    print("wrong token")
-    p=getpass("Enter shield activation/radiation medecine token: ")
-
+    print(riddle1_wrongtoken)
+    p=getpass(riddle1_shieldtoken)
 
 getpass(riddle_passed)
 cls()
-
 
 # Riddle #2
 
 print(riddle2)
 
-print("Load a breathable atmosphere into the escape pods. Beware of oxygen toxicity!")
+print(riddle2_atmo)
     
 O2_level = 0
 N2_level = 0
@@ -150,35 +148,43 @@ i = 0
 
 while not ((np.abs(O2_level-21) < 2) and (np.abs(N2_level-78) < 2) and (np.abs(Ar_level-1) < 0.5) and (np.abs(CO2_level-0.05) < 0.02)):
     if (i > 0):
-        print("Hum, not quite breathable yet...")
+        print(riddle2_tmp)
         
-    mainQuest = menu("Pipe 28, level {:.2f}%".format(N2_level), "Pipe 40, level {:.2f}%".format(Ar_level), "Pipe 20, level 0.00%", "Pipe 26, level 0.00%", "Pipe 04, level 0.00%", "Pipe 84, level 0.00%", "Pipe 44, level {:.2f}%".format(CO2_level), "Pipe 02, level 0.00%", "Pipe 32, level {:.2f}%".format(O2_level))
+    mainQuest = menu(riddle2_pipe.format(28, N2_level),
+                     riddle2_pipe.format(40, Ar_level),
+                     riddle2_pipe.format(20, 0),
+                     riddle2_pipe.format(26, 0),
+                     riddle2_pipe.format( 4, 0),
+                     riddle2_pipe.format(84, 0),
+                     riddle2_pipe.format(44, CO2_level),
+                     riddle2_pipe.format( 2, 0),
+                     riddle2_pipe.format(32, O2_level))
 
     if mainQuest == 1:
         try:
-            N2_level=float(getpass("Fill pods with gas 28 at (%) "))
+            N2_level=float(getpass(riddle2_fill.format(28)))
         except:
             N2_level = 0
 
     elif mainQuest == 2:
         try:
-            Ar_level=float(getpass("Fill pods with gas 40 at (%) "))
+            Ar_level=float(getpass(riddle2_fill.format(40)))
         except:
             Ar_level = 0
             
     elif mainQuest == 7:
         try:
-            CO2_level=float(getpass("Fill pods with gas 44 at (%) "))
+            CO2_level=float(getpass(riddle2_fill.format(44)))
         except:
             CO2_level = 0
     elif mainQuest == 9:
         try:
-            O2_level=float(getpass("Fill pods with gas 32 at (%) "))
+            O2_level=float(getpass(riddle2_fill.format(32)))
         except:
             O2_level=0
             
     else:
-        print("No need to breath that, actually!")
+        print(riddle2_noneed)
 
     i+=1
 
@@ -189,22 +195,22 @@ cls()
 # Riddle #3
 
 print(riddle3)
-mainQuest = menu("Sit back, relax and watch interdimensional cable", "Compute escape pods coordinates")
+mainQuest = menu(riddle3_sit_back, riddle3_compute)
 
 if mainQuest==1:
-    print("Connecting to interdimensional cable")
+    print(riddle3_connect)
 
     for i in tqdm(range(0,100)):
         sleep(0.1)
 
-    print("C137 - XZF8901: link established")
+    print(riddle3_link)
     
     call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
-    mainQuest = menu("Compute escape coordinates")
+    mainQuest = menu(riddle3_compute)
 
     if mainQuest==1:
-        print("Computing escape trajectory")
+        print(riddle3_escape)
 
         for i in tqdm(range(0,100)):
             sleep(0.1)
@@ -212,42 +218,42 @@ if mainQuest==1:
         call("open escape_map.pdf", shell=True)
         
 elif mainQuest==2:
-    print("Computing escape trajectory")
+    print(riddle3_escape)
 
     for i in tqdm(range(0,100)):
         sleep(0.1)
 
     call("open escape_map.pdf", shell=True)
 
-    mainQuest = menu("Sit back, relax and watch interdimensional cable")
+    mainQuest = menu(riddle3_sit_back)
 
     if mainQuest == 1:
 
-        print("Connecting to interdimensional cable")
+        print(riddle3_connect)
 
         for i in tqdm(range(0,100)):
             sleep(0.1)
 
-        print("C137 - XZF8901: link established")
+        print(riddle3_link)
     
         call("open  https://topotech.github.io/interdimensionalcable/", shell=True)
 
-p=getpass("Enter pods escape coordinates [DIMENSION-RADIUS-ANGLE DDDD-RR-AAA]: ")
+p=getpass(riddle3_coords)
 
 while(p.lower() != "c137-30-135"):
-    print("loading coordinates {}".format(p.lower()))
+    print(riddle3_loading.format(p.lower()))
     for i in tqdm(range(0,10)):
             sleep(0.1)
 
     if (p.lower() == "c137-30-045"):
-        print("Not enough fuel for this escape coords")
-        p=getpass("Enter pods escape coordinates: DIMENSIONS-RADIUS-ANGLE DDDD-RR-AAA: ")
+        print(riddle3_fuel)
+        p=getpass(riddle3_coords)
     else:
-        print("Invalid coordinates")
-        p=getpass("Enter pods escape coordinates: DIMENSIONS-RADIUS-ANGLE DDDD-RR-AAA: ")
+        print(riddle3_invalid)
+        p=getpass(riddle3_coords)
 
 
-print("Uploading trajectory")
+print(riddle3_uploading)
 for i in tqdm(range(0,100)):
     sleep(0.1)
 
