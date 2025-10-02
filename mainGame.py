@@ -1,5 +1,5 @@
 # Importing art
-from asciiArt import *
+from asciiArt_fr import *
 
 # Importing modules
 import os
