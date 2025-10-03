@@ -107,7 +107,7 @@ riddle4=r"""
 """
 
 intro_text1="""
-Bonjour bonjour, ici Martha, votre dévouée assistante robot humanoïde, fidèle au poste !
+Bonjour bonjour, ici Martha, votre robot humanoïde assistant dévoué, fidèle au poste !
 Bienvenue à la réunion d'urgence de l'équipage du Stellar Orbiter, aujourd'hui le 11 octobre 2525.
 """
 
