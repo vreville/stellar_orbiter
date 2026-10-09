@@ -245,7 +245,7 @@ while(p.lower() != "c137-30-135"):
     for i in tqdm(range(0,10)):
             sleep(0.1)
 
-    if (p.lower() == "c137-30-045"):
+    if (p.lower() == "c137-30-045" or p.lower() == "c137-30-315"):
         print(riddle3_fuel)
         p=getpass(riddle3_coords)
     else:
